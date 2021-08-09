@@ -1,10 +1,11 @@
 import { Box, StackDivider, VStack } from "@chakra-ui/react";
-import { Item } from "./Item/Item";
+import { Item } from "./Item";
 
 export const RenderList = () => {
   return (
     <Box
       overflowY="auto"
+      maxW="80vw"
       maxH="80vh"
       mt="10"
       p="10"
