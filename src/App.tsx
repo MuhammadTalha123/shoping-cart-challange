@@ -1,11 +1,11 @@
 import { RenderList } from "./components/RenderList";
 
-function App() {
+const App = () => {
   return (
     <>
       <RenderList />
     </>
   );
-}
+};
 
 export default App;
