@@ -1,7 +1,9 @@
+import { Item } from "./Item/Item";
+
 export const RenderList = () => {
   return (
     <>
-      <h2>RenderList</h2>
+      <Item />
     </>
   );
 };
