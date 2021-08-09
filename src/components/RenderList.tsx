@@ -4,6 +4,13 @@ export const RenderList = () => {
   return (
     <>
       <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
+      <Item />
     </>
   );
 };

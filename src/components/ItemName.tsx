@@ -1,7 +1,11 @@
+import { GridItem } from "@chakra-ui/react";
+
 export const ItemName = () => {
   return (
     <>
-      <h2>ItemName</h2>
+      <GridItem colSpan={2} bg="blue">
+        Item name will be here
+      </GridItem>
     </>
   );
 };

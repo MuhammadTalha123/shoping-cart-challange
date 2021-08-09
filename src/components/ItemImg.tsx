@@ -1,7 +1,11 @@
+import { GridItem } from "@chakra-ui/react";
+
 export const ItemImg = () => {
   return (
     <>
-      <h2>ItemImg</h2>
+      <GridItem rowSpan={2} colSpan={1} bg="tomato">
+        Image will be here
+      </GridItem>
     </>
   );
 };
