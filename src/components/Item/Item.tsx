@@ -13,8 +13,9 @@ export const Item = () => {
       h="10em"
       w="50em"
       templateRows="repeat(2, 1fr)"
-      templateColumns="repeat(5, 1fr)"
+      templateColumns="repeat(4, 1fr)"
       gap={4}
+      shadow="md"
     >
       <ItemImg />
       <ItemName />
