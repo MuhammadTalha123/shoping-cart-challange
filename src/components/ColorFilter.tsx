@@ -1,7 +1,15 @@
+import { Box, Select } from "@chakra-ui/react";
+
 export const ColorFilter = () => {
   return (
-    <>
-      <h2>ColorFilter</h2>
-    </>
+    <Box mt="10">
+      <Select
+        bg="tomato"
+        borderColor="tomato"
+        color="white"
+        placeholder="Filter Items By Color !"
+        outline="none"
+      />
+    </Box>
   );
 };

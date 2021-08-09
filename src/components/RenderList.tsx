@@ -1,9 +1,16 @@
-import { StackDivider, VStack } from "@chakra-ui/react";
+import { Box, StackDivider, VStack } from "@chakra-ui/react";
 import { Item } from "./Item/Item";
 
 export const RenderList = () => {
   return (
-    <>
+    <Box
+      overflowY="auto"
+      maxH="80vh"
+      mt="10"
+      p="10"
+      shadow="lg"
+      border="2px solid red"
+    >
       <VStack
         divider={
           <StackDivider
@@ -25,6 +32,6 @@ export const RenderList = () => {
         <Item />
         <Item />
       </VStack>
-    </>
+    </Box>
   );
 };
