@@ -1,4 +1,4 @@
-import { Box, Button, Text, Flex } from "@chakra-ui/react";
+import { Box, Button, Text, Flex, useMediaQuery } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { InitialStateProps, ItemProps } from "../interfaces/redux";
@@ -11,6 +11,7 @@ export const ItemQuantity = ({
   id: number;
   selected: number;
 }) => {
+  const [isLargerThan500] = useMediaQuery("(max-width: 500px)");
   const { items, filteredItems } = useSelector(
     (state: InitialStateProps) => state
   );
@@ -47,23 +48,33 @@ export const ItemQuantity = ({
 
   return (
     <>
-      <Box width="25%">
-        <Flex alignItems="center" justifyContent="center" height="100%">
+      <Box width="24%" borderLeft="1px solid black" ml="1">
+        <Flex
+          alignItems="center"
+          justifyContent="center"
+          height="100%"
+          direction={isLargerThan500 ? "column" : "row"}
+        >
           <Button
             bg="transparent"
             size="lg"
-            margin="5px"
+            variant="unstyled"
+            outline="none"
+            // margin="5px"
             onClick={handleIncreaseQuantity}
           >
             +
           </Button>
-          <Text fontSize="lg" margin="5px">
+          <Text fontSize="lg" m="2">
             {selected}
           </Text>
           <Button
             bg="transparent"
+            outline="none"
+            border="none"
             size="lg"
-            margin="5px"
+            variant="unstyled"
+            // margin="5px"
             onClick={handleDecreaseQuantity}
           >
             -

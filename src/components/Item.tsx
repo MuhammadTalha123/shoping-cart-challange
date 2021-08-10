@@ -1,4 +1,4 @@
-import { Flex } from "@chakra-ui/react";
+import { Flex, useMediaQuery } from "@chakra-ui/react";
 import { ItemProps } from "../interfaces/redux";
 import { ItemImg } from "./ItemImg";
 import { ItemName } from "./ItemName";
@@ -6,12 +6,15 @@ import { ItemPrice } from "./ItemPrice";
 import { ItemQuantity } from "./ItemQuantity";
 
 export const Item = ({ item }: { item: ItemProps }) => {
+  const [isLargerThan500] = useMediaQuery("(max-width: 500px)");
   return (
     <Flex
-      m={{ base: "1", md: "2" }}
+      m={{ base: "0", md: "2" }}
       h="10em"
-      w={{ base: "100%", md: "100%" }}
-      direction={{ base: "column", md: "row" }}
+      // w={{ base: "100%", md: "100%" }}
+      w={isLargerThan500 ? "100%" : "60%"}
+      // direction={{ base: "column", md: "row" }}
+      justifyContent="center"
       shadow="md"
     >
       <ItemImg img={item?.img} />

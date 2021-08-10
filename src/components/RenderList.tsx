@@ -7,12 +7,12 @@ export const RenderList = ({ items = [] }: { items: ItemProps[] }) => {
     <>
       <Box
         overflowY="auto"
-        maxW="80vw"
+        // maxW="80vw"
+        minW={{ base: "95vw", md: "80vw" }}
         maxH="80vh"
         mt="10"
         p="10"
         shadow="lg"
-        border="2px solid red"
       >
         <VStack
           divider={
