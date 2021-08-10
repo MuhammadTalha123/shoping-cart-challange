@@ -1,6 +1,19 @@
 import { Box, Heading } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { InitialStateProps } from "../interfaces/redux";
 
 export const TotalAmount = () => {
+  const [total, setTotal] = useState(0);
+  const { items, filteredItems } = useSelector(
+    (state: InitialStateProps) => state
+  );
+
+  useEffect(() => {
+    let total = 0;
+    items.forEach((item) => (total += item.selected * item.price));
+    setTotal(Math.round(total));
+  }, [items]);
   return (
     <Box
       position="fixed"
@@ -10,7 +23,7 @@ export const TotalAmount = () => {
       textAlign="right"
     >
       <Heading display="inline-block" as="h3">
-        $1 Total
+        €{total} Total
       </Heading>
     </Box>
   );
