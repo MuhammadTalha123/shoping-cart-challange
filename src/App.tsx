@@ -5,7 +5,7 @@ import { getItems } from "./api/GetItem";
 import { ColorFilter } from "./components/ColorFilter";
 import { RenderList } from "./components/RenderList";
 import { TotalAmount } from "./components/TotalAmount";
-import { InitialStateProps } from "./interfaces/redux";
+import { InitialStateProps, ItemProps } from "./interfaces/redux";
 import { setItems } from "./redux/actions";
 
 const App = () => {
@@ -18,7 +18,11 @@ const App = () => {
   useEffect(() => {
     getItems().then((data: any) => {
       console.log(data);
-      dispatch(setItems(data));
+      const updatedData = data?.map((data: ItemProps) => ({
+        ...data,
+        selected: 0,
+      }));
+      dispatch(setItems(updatedData));
     });
   }, []);
   return (

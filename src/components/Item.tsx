@@ -6,7 +6,6 @@ import { ItemPrice } from "./ItemPrice";
 import { ItemQuantity } from "./ItemQuantity";
 
 export const Item = ({ item }: { item: ItemProps }) => {
-  console.log("item", item);
   return (
     <Grid
       m={{ base: "1", md: "2" }}
@@ -19,7 +18,7 @@ export const Item = ({ item }: { item: ItemProps }) => {
     >
       <ItemImg img={item?.img} />
       <ItemName name={item?.name} />
-      <ItemQuantity id={item?.id} />
+      <ItemQuantity id={item?.id} selected={item?.selected} />
       <ItemPrice price={item?.price} />
     </Grid>
   );

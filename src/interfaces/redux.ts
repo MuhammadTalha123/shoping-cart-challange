@@ -9,6 +9,7 @@ export interface ItemProps {
   name: string;
   price: number;
   img: string;
+  selected: number;
 }
 
 export interface ActionProps {
