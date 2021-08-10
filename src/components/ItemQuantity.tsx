@@ -10,7 +10,7 @@ export const ItemQuantity = ({
   id: number;
   selected: number;
 }) => {
-  const [isLargerThan500] = useMediaQuery("(max-width: 500px)");
+  const [isLargerThan500] = useMediaQuery("(max-width: 700px)");
   const { items } = useSelector((state: InitialStateProps) => state);
 
   const dispatch = useDispatch();
