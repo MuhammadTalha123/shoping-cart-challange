@@ -7,12 +7,23 @@ export const RenderList = ({ items = [] }: { items: ItemProps[] }) => {
     <>
       <Box
         overflowY="auto"
-        // maxW="80vw"
         minW={{ base: "95vw", md: "80vw" }}
         maxH="80vh"
         mt="10"
         p="10"
         shadow="lg"
+        css={{
+          "&::-webkit-scrollbar": {
+            width: "7px",
+          },
+          "&::-webkit-scrollbar-track": {
+            width: "10px",
+          },
+          "&::-webkit-scrollbar-thumb": {
+            background: "lightgray",
+            borderRadius: "24px",
+          },
+        }}
       >
         <VStack
           divider={
