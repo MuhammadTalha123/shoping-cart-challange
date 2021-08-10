@@ -1,11 +1,9 @@
-import { GridItem, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 
 export const ItemPrice = ({ price }: { price: number }) => {
   return (
-    <>
-      <GridItem colSpan={2} >
-        <Text fontSize="lg">Price: €{price}</Text>
-      </GridItem>
-    </>
+    <Box>
+        <Text fontSize="lg" textAlign="right">Price: €{price}</Text>
+      </Box>
   );
 };

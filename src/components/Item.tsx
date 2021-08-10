@@ -1,4 +1,4 @@
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
 import { ItemProps } from "../interfaces/redux";
 import { ItemImg } from "./ItemImg";
 import { ItemName } from "./ItemName";
@@ -7,19 +7,24 @@ import { ItemQuantity } from "./ItemQuantity";
 
 export const Item = ({ item }: { item: ItemProps }) => {
   return (
-    <Grid
+    <Flex
       m={{ base: "1", md: "2" }}
       h="10em"
       w={{ base: "100%", md: "100%" }}
-      templateRows={{ base: "repeat(6, 1fr)", md: "repeat(2, 1fr)" }}
-      templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(4, 1fr)" }}
-      gap={4}
+      direction={{ base: "column", md: "row" }}
       shadow="md"
     >
       <ItemImg img={item?.img} />
-      <ItemName name={item?.name} />
+      <Flex
+        direction="column"
+        justifyContent="space-around"
+        ml="10px"
+        width="50%"
+      >
+        <ItemName name={item?.name} />
+        <ItemPrice price={item?.price} />
+      </Flex>
       <ItemQuantity id={item?.id} selected={item?.selected} />
-      <ItemPrice price={item?.price} />
-    </Grid>
+    </Flex>
   );
 };

@@ -1,12 +1,11 @@
-import { GridItem, Image } from "@chakra-ui/react";
+import { Box, Image } from "@chakra-ui/react";
 
 export const ItemImg = ({ img }: { img: string }) => {
   return (
     <>
-      <GridItem rowSpan={2} colSpan={1} >
-        
-        <Image src={img} h="160" w="200" alt="Model Image" />
-      </GridItem>
+      <Box width="25%">
+        <Image src={img} h="160" w="250" alt="Model Image" />
+      </Box>
     </>
   );
 };

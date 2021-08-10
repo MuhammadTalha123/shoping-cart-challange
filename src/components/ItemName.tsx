@@ -1,11 +1,11 @@
-import { GridItem, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 
 export const ItemName = ({ name }: { name: string }) => {
   return (
     <>
-      <GridItem colSpan={2}>
+      <Box>
         <Text fontSize="lg">{name}</Text>
-      </GridItem>
+      </Box>
     </>
   );
 };

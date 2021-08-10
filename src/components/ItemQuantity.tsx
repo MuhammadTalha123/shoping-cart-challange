@@ -1,4 +1,4 @@
-import { GridItem, Button, Text, Flex } from "@chakra-ui/react";
+import { Box, Button, Text, Flex } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { InitialStateProps, ItemProps } from "../interfaces/redux";
@@ -47,7 +47,7 @@ export const ItemQuantity = ({
 
   return (
     <>
-      <GridItem rowSpan={2} colSpan={1}>
+      <Box width="25%">
         <Flex alignItems="center" justifyContent="center" height="100%">
           <Button
             bg="transparent"
@@ -69,7 +69,7 @@ export const ItemQuantity = ({
             -
           </Button>
         </Flex>
-      </GridItem>
+      </Box>
     </>
   );
 };
