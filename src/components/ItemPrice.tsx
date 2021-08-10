@@ -4,7 +4,7 @@ export const ItemPrice = ({ price }: { price: number }) => {
   return (
     <>
       <GridItem colSpan={2} >
-        <Text fontSize="lg">€{price}</Text>
+        <Text fontSize="lg">Price: €{price}</Text>
       </GridItem>
     </>
   );
