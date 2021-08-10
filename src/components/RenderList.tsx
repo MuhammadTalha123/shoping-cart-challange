@@ -26,7 +26,9 @@ export const RenderList = ({ items = [] }: { items: ItemProps[] }) => {
           spacing={4}
           align="center"
         >
-          <Item item={items[0]} />
+          {items?.length
+            ? items.map((item) => <Item item={item} key={item?.id} />)
+            : "No items"}
         </VStack>
       </Box>
     </>

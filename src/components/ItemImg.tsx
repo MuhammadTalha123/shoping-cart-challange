@@ -5,7 +5,7 @@ export const ItemImg = ({ img }: { img: string }) => {
     <>
       <GridItem rowSpan={2} colSpan={1} >
         
-        <Image src={img} h="200" w="200" alt="Segun Adebayo" align="center" justifyContent="center" />
+        <Image src={img} h="160" w="200" alt="Model Image" />
       </GridItem>
     </>
   );

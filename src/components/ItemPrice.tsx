@@ -1,10 +1,10 @@
-import { GridItem } from "@chakra-ui/react";
+import { GridItem, Text } from "@chakra-ui/react";
 
 export const ItemPrice = ({ price }: { price: number }) => {
   return (
     <>
-      <GridItem colSpan={2} bg="yellow">
-        Item price will be here
+      <GridItem colSpan={2} >
+        <Text fontSize="lg">€{price}</Text>
       </GridItem>
     </>
   );
