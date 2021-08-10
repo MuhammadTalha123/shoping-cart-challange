@@ -5,9 +5,7 @@ import { InitialStateProps, ItemProps } from "../interfaces/redux";
 
 export const TotalAmount = () => {
   const [total, setTotal] = useState(0);
-  const { items, filteredItems } = useSelector(
-    (state: InitialStateProps) => state
-  );
+  const { items } = useSelector((state: InitialStateProps) => state);
 
   useEffect(() => {
     let total = 0;

@@ -10,7 +10,6 @@ import { setFilterColors, setItems } from "./redux/actions";
 
 const App = () => {
   const dispatch = useDispatch();
-
   const { items, filteredItems } = useSelector(
     (state: InitialStateProps) => state
   );
@@ -32,7 +31,7 @@ const App = () => {
       dispatch(setItems(updatedData));
       dispatch(setFilterColors(filterColors));
     });
-  }, []);
+  });
   return (
     <Flex alignItems="center" maxH="85vh" flexDir="column">
       <ColorFilter />

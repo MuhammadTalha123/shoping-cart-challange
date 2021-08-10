@@ -1,5 +1,4 @@
 import { Box, Button, Text, Flex, useMediaQuery } from "@chakra-ui/react";
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { InitialStateProps, ItemProps } from "../interfaces/redux";
 import { setItems } from "../redux/actions";
@@ -12,13 +11,8 @@ export const ItemQuantity = ({
   selected: number;
 }) => {
   const [isLargerThan500] = useMediaQuery("(max-width: 500px)");
-  const { items, filteredItems } = useSelector(
-    (state: InitialStateProps) => state
-  );
+  const { items } = useSelector((state: InitialStateProps) => state);
 
-  useEffect(() => {
-    // console.log("UpdateCount", items);
-  }, [items]);
   const dispatch = useDispatch();
   // Get all items
   // update the Item
