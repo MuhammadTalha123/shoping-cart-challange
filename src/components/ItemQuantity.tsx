@@ -14,9 +14,6 @@ export const ItemQuantity = ({
   const { items } = useSelector((state: InitialStateProps) => state);
 
   const dispatch = useDispatch();
-  // Get all items
-  // update the Item
-  // Set updated in redux
   const handleIncreaseQuantity = () => {
     const updatedArr: any = items?.map((item: ItemProps) => {
       if (item?.id === id) {
@@ -54,7 +51,6 @@ export const ItemQuantity = ({
             size="lg"
             variant="unstyled"
             outline="none"
-            // margin="5px"
             onClick={handleIncreaseQuantity}
           >
             +
@@ -68,7 +64,6 @@ export const ItemQuantity = ({
             border="none"
             size="lg"
             variant="unstyled"
-            // margin="5px"
             onClick={handleDecreaseQuantity}
           >
             -

@@ -19,7 +19,6 @@ const App = () => {
     if (!loading) {
       setLoading(true);
       getItems().then((data: any) => {
-        console.log(data);
         let filterColors: string[] = [];
         const updatedData = data?.map((item: ItemProps) => {
           const exists = filterColors.find((color) => color === item.colour);

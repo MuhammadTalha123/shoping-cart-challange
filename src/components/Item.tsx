@@ -11,9 +11,7 @@ export const Item = ({ item }: { item: ItemProps }) => {
     <Flex
       m={{ base: "0", md: "2" }}
       h="10em"
-      // w={{ base: "100%", md: "100%" }}
       w={isLargerThan500 ? "100%" : "60%"}
-      // direction={{ base: "column", md: "row" }}
       justifyContent="center"
       shadow="md"
     >
