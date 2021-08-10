@@ -1,10 +1,12 @@
 import { Grid, GridItem } from "@chakra-ui/react";
+import { ItemProps } from "../interfaces/redux";
 import { ItemImg } from "./ItemImg";
 import { ItemName } from "./ItemName";
 import { ItemPrice } from "./ItemPrice";
 import { ItemQuantity } from "./ItemQuantity";
 
-export const Item = () => {
+export const Item = ({ item }: { item: ItemProps }) => {
+  console.log("item", item);
   return (
     <Grid
       m={{ base: "1", md: "2" }}
@@ -15,10 +17,10 @@ export const Item = () => {
       gap={4}
       shadow="md"
     >
-      <ItemImg />
-      <ItemName />
-      <ItemQuantity />
-      <ItemPrice />
+      <ItemImg img={item?.img} />
+      <ItemName name={item?.name} />
+      <ItemQuantity id={item?.id} />
+      <ItemPrice price={item?.price} />
     </Grid>
   );
 };
