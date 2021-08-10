@@ -6,7 +6,7 @@ import { ColorFilter } from "./components/ColorFilter";
 import { RenderList } from "./components/RenderList";
 import { TotalAmount } from "./components/TotalAmount";
 import { InitialStateProps, ItemProps } from "./interfaces/redux";
-import { setItems } from "./redux/actions";
+import { setFilterColors, setItems } from "./redux/actions";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -18,11 +18,19 @@ const App = () => {
   useEffect(() => {
     getItems().then((data: any) => {
       console.log(data);
-      const updatedData = data?.map((data: ItemProps) => ({
-        ...data,
-        selected: 0,
-      }));
+      let filterColors: string[] = [];
+      const updatedData = data?.map((item: ItemProps) => {
+        const exists = filterColors.find((color) => color === item.colour);
+        if (!exists) {
+          filterColors.push(item.colour);
+        }
+        return {
+          ...item,
+          selected: 0,
+        };
+      });
       dispatch(setItems(updatedData));
+      dispatch(setFilterColors(filterColors));
     });
   }, []);
   return (

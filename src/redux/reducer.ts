@@ -3,6 +3,7 @@ import { ActionProps, InitialStateProps } from "./../interfaces/redux";
 export const initialState: InitialStateProps = {
   items: [],
   filteredItems: [],
+  filterColors: [],
 };
 
 export const Reducer = (state = initialState, action: ActionProps) => {
@@ -11,6 +12,12 @@ export const Reducer = (state = initialState, action: ActionProps) => {
       return {
         ...state,
         items: action.payload,
+      };
+
+    case "SET_FILTERE_COLORS":
+      return {
+        ...state,
+        filterColors: action.payload,
       };
 
     case "SET_FILTERED_ITEMS":

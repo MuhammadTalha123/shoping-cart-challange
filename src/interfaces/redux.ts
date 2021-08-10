@@ -1,6 +1,7 @@
 export interface InitialStateProps {
   items: ItemProps[];
   filteredItems: ItemProps[];
+  filterColors: string[];
 }
 
 export interface ItemProps {
@@ -14,5 +15,5 @@ export interface ItemProps {
 
 export interface ActionProps {
   type: string;
-  payload: ItemProps[] | [];
+  payload: any;
 }
