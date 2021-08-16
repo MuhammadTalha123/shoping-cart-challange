@@ -6,7 +6,7 @@ interface ItemPriceProps {
 
 export const ItemPrice: React.FC<ItemPriceProps> = ({ price }) => (
   <Box>
-    <Text fontSize="lg" textAlign="left">
+    <Text fontSize="md" textAlign="left">
       Price: €{price}
     </Text>
   </Box>

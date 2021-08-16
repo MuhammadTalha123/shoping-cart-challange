@@ -1,4 +1,4 @@
-import { Box, Heading } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { StateProps, ItemProps } from "../interfaces";
@@ -23,9 +23,7 @@ export const TotalAmount: React.FC<TotalAmountProps> = () => {
       bottom="5"
       textAlign="right"
     >
-      <Heading display="inline-block" as="h3">
-        €{total} Total
-      </Heading>
+      <Text fontSize="3xl">€{total} Total</Text>
     </Box>
   );
 };
