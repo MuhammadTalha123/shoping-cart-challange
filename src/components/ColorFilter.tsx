@@ -1,12 +1,12 @@
 import { ChangeEventHandler } from "react";
 import { Box, Select } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
-import { InitialStateProps } from "../interfaces/redux";
+import { StateProps } from "../interfaces/redux";
 import { setFilteredItems } from "../redux/actions";
 
 export const ColorFilter = () => {
-  const { filterColors, items } = useSelector(
-    (state: InitialStateProps) => state
+  const { filterColors, items }: StateProps = useSelector(
+    (state: StateProps) => state
   );
   const dispatch = useDispatch();
   const onChangeHandler: ChangeEventHandler<HTMLSelectElement> = (event) => {

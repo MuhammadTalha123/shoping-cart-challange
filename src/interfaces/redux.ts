@@ -1,4 +1,4 @@
-export interface InitialStateProps {
+export interface StateProps {
   items: ItemProps[];
   filteredItems: ItemProps[];
   filterColors: string[];

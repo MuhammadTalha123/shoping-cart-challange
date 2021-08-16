@@ -1,14 +1,14 @@
 import { Box, Heading } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { InitialStateProps, ItemProps } from "../interfaces/redux";
+import { StateProps, ItemProps } from "../interfaces/redux";
 
 export const TotalAmount = () => {
   const [total, setTotal] = useState(0);
-  const { items } = useSelector((state: InitialStateProps) => state);
+  const { items }: StateProps = useSelector((state: StateProps) => state);
 
   useEffect(() => {
-    let total = 0;
+    let total: number = 0;
     items.forEach((item: ItemProps) => (total += item.selected * item.price));
     setTotal(Math.round(total));
   }, [items]);
