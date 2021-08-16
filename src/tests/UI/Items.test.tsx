@@ -1,6 +1,5 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { RenderList } from "../../components/RenderList";
 import { getItems } from "../../api/GetItem";
 import { Item } from "../../components/Item";
 import { ItemProps } from "../../interfaces";
