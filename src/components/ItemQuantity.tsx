@@ -10,7 +10,7 @@ interface ItemQuantityProps {
 }
 
 export const ItemQuantity: React.FC<ItemQuantityProps> = ({ id, selected }) => {
-  const [isLargerThan500]: boolean[] = useMediaQuery("(max-width: 700px)");
+  const [isLarger]: boolean[] = useMediaQuery("(max-width: 700px)");
   const { items }: StateProps = useSelector((state: StateProps) => state);
 
   const dispatch: Dispatch<any> = useDispatch();
@@ -45,7 +45,7 @@ export const ItemQuantity: React.FC<ItemQuantityProps> = ({ id, selected }) => {
         alignItems="center"
         justifyContent="center"
         height="100%"
-        direction={isLargerThan500 ? "column" : "row"}
+        direction={isLarger ? "column" : "row"}
       >
         <Button
           bg="transparent"

@@ -11,11 +11,11 @@ export const RenderList: React.FC<RenderListProps> = ({ items = [] }) => (
     {items.length ? (
       <Box
         overflowY="auto"
-        minW={{ base: "95vw", md: "80vw" }}
-        maxH="80vh"
         mt="10"
         p="10"
+        minW="40%"
         shadow="lg"
+        h="auto"
         css={{
           "&::-webkit-scrollbar": {
             width: "7px",

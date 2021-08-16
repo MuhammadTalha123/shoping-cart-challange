@@ -5,7 +5,7 @@ interface ItemNameProps {
 }
 
 export const ItemName: React.FC<ItemNameProps> = ({ name }) => (
-  <Box textAlign="left">
+  <Box textAlign="left" overflowY="auto">
     <Text fontSize="lg">{name}</Text>
   </Box>
 );
