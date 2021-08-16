@@ -4,7 +4,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { StateProps } from "../interfaces/redux";
 import { setFilteredItems } from "../redux/actions";
 
-export const ColorFilter = () => {
+interface ColorFilterProps {}
+
+export const ColorFilter: React.FC<ColorFilterProps> = () => {
   const { filterColors, items }: StateProps = useSelector(
     (state: StateProps) => state
   );

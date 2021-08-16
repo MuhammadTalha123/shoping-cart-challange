@@ -5,7 +5,11 @@ import { ItemName } from "./ItemName";
 import { ItemPrice } from "./ItemPrice";
 import { ItemQuantity } from "./ItemQuantity";
 
-export const Item = ({ item }: { item: ItemProps }) => {
+interface ListItemProps {
+  item: ItemProps;
+}
+
+export const Item: React.FC<ListItemProps> = ({ item }) => {
   const [isLargerThan500] = useMediaQuery("(max-width: 500px)");
   return (
     <Flex

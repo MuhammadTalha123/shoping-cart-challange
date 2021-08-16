@@ -2,7 +2,11 @@ import { Box, StackDivider, VStack } from "@chakra-ui/react";
 import { ItemProps } from "../interfaces/redux";
 import { Item } from "./Item";
 
-export const RenderList = ({ items = [] }: { items: ItemProps[] }) => {
+interface RenderListProps {
+  items: ItemProps[];
+}
+
+export const RenderList: React.FC<RenderListProps> = ({ items = [] }) => {
   return (
     <>
       {items.length ? (

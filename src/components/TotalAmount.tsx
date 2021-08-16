@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { StateProps, ItemProps } from "../interfaces/redux";
 
-export const TotalAmount = () => {
+interface TotalAmountProps {}
+
+export const TotalAmount: React.FC<TotalAmountProps> = () => {
   const [total, setTotal] = useState(0);
   const { items }: StateProps = useSelector((state: StateProps) => state);
 

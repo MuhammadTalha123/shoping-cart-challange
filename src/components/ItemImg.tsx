@@ -1,9 +1,13 @@
 import { Box, Image } from "@chakra-ui/react";
 
-export const ItemImg = ({ img }: { img: string }) => {
+interface ItemImgProps {
+  img: string;
+}
+
+export const ItemImg: React.FC<ItemImgProps> = ({ img }) => {
   return (
     <Box width={{ base: "25%", md: "25%" }}>
-      <Image src={img} h="160" w="300" objectFit="cover" alt="Model Image" />
+      <Image src={img} h="160" w="full" objectFit="contain" alt="Model Image" />
     </Box>
   );
 };

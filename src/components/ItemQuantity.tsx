@@ -3,13 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { StateProps, ItemProps } from "../interfaces/redux";
 import { setItems } from "../redux/actions";
 
-export const ItemQuantity = ({
-  id,
-  selected,
-}: {
+interface ItemQuantity {
   id: number;
   selected: number;
-}) => {
+}
+
+export const ItemQuantity: React.FC<ItemQuantity> = ({ id, selected }) => {
   const [isLargerThan500] = useMediaQuery("(max-width: 700px)");
   const { items }: StateProps = useSelector((state: StateProps) => state);
 
