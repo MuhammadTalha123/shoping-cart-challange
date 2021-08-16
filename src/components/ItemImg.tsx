@@ -8,7 +8,7 @@ export const ItemImg: React.FC<ItemImgProps> = ({ img }) => {
   const [isLarger]: boolean[] = useMediaQuery("(max-width: 500px)");
 
   return (
-    <Box width={{ base: isLarger ? "30%" : "45%", md: "25%" }}>
+    <Box width={{ base: isLarger ? "30%" : "25%", md: "20%" }}>
       <Image
         src={img}
         h="160"
