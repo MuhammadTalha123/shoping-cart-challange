@@ -4,13 +4,14 @@ import { RenderList } from "../../components/RenderList";
 import { getItems } from "../../api/GetItem";
 import { Provider } from "react-redux";
 import { store } from "../../redux/store";
+import { ItemProps } from "../../interfaces";
 
 const ReduxProvider = ({ children, store }: any) => (
   <Provider store={store}>{children}</Provider>
 );
 
 test("It should render the list", async () => {
-  const items = await getItems();
+  const items: ItemProps[] = await getItems();
   render(
     <ReduxProvider store={store} children={<RenderList items={items} />} />
   );
