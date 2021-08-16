@@ -49,9 +49,10 @@ export const ItemQuantity: React.FC<ItemQuantityProps> = ({ id, selected }) => {
       >
         <Button
           bg="transparent"
-          size="lg"
+          size="md"
           variant="unstyled"
           outline="none"
+          border="2px solid white"
           onClick={handleIncreaseQuantity}
         >
           +
@@ -63,7 +64,7 @@ export const ItemQuantity: React.FC<ItemQuantityProps> = ({ id, selected }) => {
           bg="transparent"
           outline="none"
           border="none"
-          size="lg"
+          size="md"
           variant="unstyled"
           onClick={handleDecreaseQuantity}
         >
