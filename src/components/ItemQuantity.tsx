@@ -40,7 +40,7 @@ export const ItemQuantity: React.FC<ItemQuantityProps> = ({ id, selected }) => {
   };
 
   return (
-    <Box width="24%" borderLeft="1px solid black" ml="1">
+    <Box width="30%" borderLeft="1px solid black" ml="1">
       <Flex
         alignItems="center"
         justifyContent="center"

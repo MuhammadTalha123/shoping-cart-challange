@@ -13,7 +13,7 @@ export const RenderList: React.FC<RenderListProps> = ({ items = [] }) => (
         overflowY="auto"
         mt="10"
         p="10"
-        minW="40%"
+        minW="55%"
         shadow="lg"
         h="auto"
         css={{
