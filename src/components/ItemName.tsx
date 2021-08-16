@@ -6,6 +6,8 @@ interface ItemNameProps {
 
 export const ItemName: React.FC<ItemNameProps> = ({ name }) => (
   <Box textAlign="left" overflowY="auto">
-    <Text fontSize="md">{name}</Text>
+    <Text fontSize="md" fontWeight="medium">
+      {name}
+    </Text>
   </Box>
 );

@@ -10,21 +10,22 @@ interface ListItemProps {
 }
 
 export const Item: React.FC<ListItemProps> = ({ item }) => {
-  const [isLargerThan500]: boolean[] = useMediaQuery("(max-width: 500px)");
+  const [isLarger]: boolean[] = useMediaQuery("(max-width: 500px)");
 
   return (
     <Flex
       m={{ base: "0", md: "2" }}
       h="10em"
-      w={isLargerThan500 ? "100%" : "60%"}
+      w={isLarger ? "100%" : "70%"}
       justifyContent="center"
       shadow="md"
       boxShadow="lg"
       _hover={{
         boxShadow: "2xl",
         cursor: "pointer",
+        bg: "#e5e5e5",
       }}
-      transition="ease-in 0.5s"
+      transition="ease-in 0.3s"
     >
       <ItemImg img={item?.img} />
       <Flex
