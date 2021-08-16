@@ -15,6 +15,7 @@ export const ItemImg: React.FC<ItemImgProps> = ({ img }) => {
         w="full"
         objectFit={isLarger ? "cover" : "contain"}
         alt="Model Image"
+        onClick={() => window.open(img)}
       />
     </Box>
   );

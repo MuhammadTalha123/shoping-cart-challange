@@ -19,6 +19,12 @@ export const Item: React.FC<ListItemProps> = ({ item }) => {
       w={isLargerThan500 ? "100%" : "60%"}
       justifyContent="center"
       shadow="md"
+      boxShadow="lg"
+      _hover={{
+        boxShadow: "2xl",
+        cursor: "pointer",
+      }}
+      transition="ease-in 0.5s"
     >
       <ItemImg img={item?.img} />
       <Flex
