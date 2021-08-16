@@ -16,7 +16,13 @@ test("It should render the list", async () => {
   );
   for (let index = 0; index < items.length; index++) {
     const { name } = items[index];
-    const itemName = screen.getByText(name);
-    expect(itemName).toBeVisible();
+    const itemNameElem = screen.getByText(name);
+    expect(itemNameElem).toBeVisible();
   }
+});
+
+test("It should render No Items for empty list", async () => {
+  render(<ReduxProvider store={store} children={<RenderList items={[]} />} />);
+  const elem = screen.getByText("No Items");
+  expect(elem).toBeVisible();
 });
