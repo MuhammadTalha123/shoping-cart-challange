@@ -4,12 +4,10 @@ interface ItemPriceProps {
   price: number;
 }
 
-export const ItemPrice: React.FC<ItemPriceProps> = ({ price }) => {
-  return (
-    <Box>
-      <Text fontSize="lg" textAlign="left">
-        Price: €{price}
-      </Text>
-    </Box>
-  );
-};
+export const ItemPrice: React.FC<ItemPriceProps> = ({ price }) => (
+  <Box>
+    <Text fontSize="lg" textAlign="left">
+      Price: €{price}
+    </Text>
+  </Box>
+);

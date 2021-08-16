@@ -1,5 +1,5 @@
 import { Flex, useMediaQuery } from "@chakra-ui/react";
-import { ItemProps } from "../interfaces/redux";
+import { ItemProps } from "../interfaces";
 import { ItemImg } from "./ItemImg";
 import { ItemName } from "./ItemName";
 import { ItemPrice } from "./ItemPrice";
@@ -10,7 +10,8 @@ interface ListItemProps {
 }
 
 export const Item: React.FC<ListItemProps> = ({ item }) => {
-  const [isLargerThan500] = useMediaQuery("(max-width: 500px)");
+  const [isLargerThan500]: boolean[] = useMediaQuery("(max-width: 500px)");
+
   return (
     <Flex
       m={{ base: "0", md: "2" }}

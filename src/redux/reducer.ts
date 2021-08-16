@@ -1,4 +1,4 @@
-import { ActionProps, StateProps } from "./../interfaces/redux";
+import { ActionProps, StateProps } from "../interfaces";
 
 export const initialState: StateProps = {
   items: [],

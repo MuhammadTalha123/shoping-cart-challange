@@ -4,10 +4,8 @@ interface ItemNameProps {
   name: string;
 }
 
-export const ItemName: React.FC<ItemNameProps> = ({ name }) => {
-  return (
-    <Box textAlign="left">
-      <Text fontSize="lg">{name}</Text>
-    </Box>
-  );
-};
+export const ItemName: React.FC<ItemNameProps> = ({ name }) => (
+  <Box textAlign="left">
+    <Text fontSize="lg">{name}</Text>
+  </Box>
+);

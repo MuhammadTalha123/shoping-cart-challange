@@ -1,8 +1,9 @@
 import { ChangeEventHandler } from "react";
 import { Box, Select } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
-import { StateProps } from "../interfaces/redux";
+import { ItemProps, StateProps } from "../interfaces";
 import { setFilteredItems } from "../redux/actions";
+import { Dispatch } from "redux";
 
 interface ColorFilterProps {}
 
@@ -10,12 +11,16 @@ export const ColorFilter: React.FC<ColorFilterProps> = () => {
   const { filterColors, items }: StateProps = useSelector(
     (state: StateProps) => state
   );
-  const dispatch = useDispatch();
+  const dispatch: Dispatch<any> = useDispatch();
+
   const onChangeHandler: ChangeEventHandler<HTMLSelectElement> = (event) => {
-    const selectedValue = event.target.value;
-    const filteredItems = items.filter((item) => item.colour === selectedValue);
+    const selectedValue: string = event.target.value;
+    const filteredItems: ItemProps[] = items.filter(
+      (item) => item.colour === selectedValue
+    );
     dispatch(setFilteredItems(filteredItems));
   };
+
   return (
     <Box mt="10" w="60">
       <Select placeholder="All Available Colors" onChange={onChangeHandler}>

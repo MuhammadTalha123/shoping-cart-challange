@@ -1,18 +1,20 @@
 import { Box, Button, Text, Flex, useMediaQuery } from "@chakra-ui/react";
 import { useDispatch, useSelector } from "react-redux";
-import { StateProps, ItemProps } from "../interfaces/redux";
+import { Dispatch } from "redux";
+import { StateProps, ItemProps } from "../interfaces";
 import { setItems } from "../redux/actions";
 
-interface ItemQuantity {
+interface ItemQuantityProps {
   id: number;
   selected: number;
 }
 
-export const ItemQuantity: React.FC<ItemQuantity> = ({ id, selected }) => {
-  const [isLargerThan500] = useMediaQuery("(max-width: 700px)");
+export const ItemQuantity: React.FC<ItemQuantityProps> = ({ id, selected }) => {
+  const [isLargerThan500]: boolean[] = useMediaQuery("(max-width: 700px)");
   const { items }: StateProps = useSelector((state: StateProps) => state);
 
-  const dispatch = useDispatch();
+  const dispatch: Dispatch<any> = useDispatch();
+
   const handleIncreaseQuantity = () => {
     const updatedArr: any = items?.map((item: ItemProps) => {
       if (item?.id === id) {
@@ -24,6 +26,7 @@ export const ItemQuantity: React.FC<ItemQuantity> = ({ id, selected }) => {
     });
     dispatch(setItems(updatedArr));
   };
+
   const handleDecreaseQuantity = () => {
     const updatedArr: any = items?.map((item: ItemProps) => {
       if (item?.id === id) {

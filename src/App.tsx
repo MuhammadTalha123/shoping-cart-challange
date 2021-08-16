@@ -1,15 +1,16 @@
 import { Flex } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Dispatch } from "redux";
 import { getItems } from "./api/GetItem";
 import { ColorFilter } from "./components/ColorFilter";
 import { RenderList } from "./components/RenderList";
 import { TotalAmount } from "./components/TotalAmount";
-import { StateProps, ItemProps } from "./interfaces/redux";
+import { StateProps, ItemProps } from "./interfaces";
 import { setFilterColors, setItems } from "./redux/actions";
 
 const App = () => {
-  const dispatch = useDispatch();
+  const dispatch: Dispatch<any> = useDispatch();
   const { items, filteredItems }: StateProps = useSelector(
     (state: StateProps) => state
   );

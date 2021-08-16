@@ -1,7 +1,7 @@
 import { Box, Heading } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { StateProps, ItemProps } from "../interfaces/redux";
+import { StateProps, ItemProps } from "../interfaces";
 
 interface TotalAmountProps {}
 
@@ -14,6 +14,7 @@ export const TotalAmount: React.FC<TotalAmountProps> = () => {
     items.forEach((item: ItemProps) => (total += item.selected * item.price));
     setTotal(Math.round(total));
   }, [items]);
+
   return (
     <Box
       position="fixed"
