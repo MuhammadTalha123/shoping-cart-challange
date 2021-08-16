@@ -47,7 +47,7 @@ export const RenderList: React.FC<RenderListProps> = ({ items = [] }) => (
         </VStack>
       </Box>
     ) : (
-      <Box mt="20">Loading Items .......</Box>
+      <Box mt="20">No Items</Box>
     )}
   </>
 );
