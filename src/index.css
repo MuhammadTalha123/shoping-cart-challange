@@ -12,6 +12,6 @@ code {
     monospace;
 }
 
-button:focus {
+*:focus {
   box-shadow: none !important;
 }
